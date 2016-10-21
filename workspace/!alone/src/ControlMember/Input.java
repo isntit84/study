@@ -66,4 +66,6 @@ public class Input {
 			case 5:
 			
 				a= false
+	}
+}
 			
