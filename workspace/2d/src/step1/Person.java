@@ -18,16 +18,19 @@ public class Person {
 
 	void plus(int i, int j) {
 		System.out.println(i + j);
-	
-	
-	public String play(){
-		///............
-		return"게임방에서 놀다";
 	}
-	public String order(int money){
-		System.out.println(money+"원 입금");
+
+	public String play() {
+		/// ............
+		return "게임방에서 놀다";
+	}
+
+	public String order(int money) {
+		System.out.println(money + "원 입금");
 		return "설렁탕";
-			}
-	public int minus(int i, int j){
+	}
+
+	public int minus(int i, int j) {
 		return i-j;
-	}}}}}
+	}
+}
