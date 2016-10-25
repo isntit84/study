@@ -48,7 +48,7 @@ public abstract class MemberVO {
 
 	@Override
 	public String toString() {
-		return "MemberVO [num=" + num + ", name=" + name + ", dept=" + dept + ", address=" + address + "]";
+		return "MemberVO [num=" + num + ", name=" + name + ", dept=" + dept + ", address=" + address;
 	}
 
 }
