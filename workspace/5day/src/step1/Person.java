@@ -1,6 +1,6 @@
 package step1;
 
-public class Person {
+public class Person extends Animal {
 	public void play() {
 		System.out.println("동물을 구경하며 놀다");
 	}
