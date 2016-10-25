@@ -18,7 +18,7 @@ public class Staff extends MemberVO {
 
 	@Override
 	public String toString() {
-		return super.toString() + "job=" + job;
+		return super.toString() + ", job=" + job+"]";
 	}
 
 }

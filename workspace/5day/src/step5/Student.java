@@ -19,7 +19,7 @@ public class Student extends MemberVO {
 
 	@Override
 	public String toString() {
-		return super.toString() + "subjects=" + subjects;
+		return super.toString() + ", subjects=" + subjects+"]";
 		// return "Student [subjects=" + subjects + "]";
 
 		///

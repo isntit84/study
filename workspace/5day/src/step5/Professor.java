@@ -18,7 +18,6 @@ public class Professor extends MemberVO {
 
 	@Override
 	public String toString() {
-		return super.toString() + "subjects=" + subjects;// ¿À·ù
+		return super.toString() + ", subjects=" + subjects + "]";
 	}
-
 }
