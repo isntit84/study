@@ -52,3 +52,4 @@ public class Lee extends Overr {
 		System.out.println("power : " + power);
 		System.out.println("energy : " + energy);
 	}
+}
