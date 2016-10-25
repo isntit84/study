@@ -27,7 +27,7 @@ public class TestAbstract1 {
 
 	public static void main(String[] args) {
 		// abstract class 이므로 직접 객체 생성 할 수 없다
-		// 자식을 통해 객체를 생성성한다.
+		// 자식을 통해 객체를 생성한다.
 		// Parent p=new parent();
 		Child c = new Child();
 		c.eat();
