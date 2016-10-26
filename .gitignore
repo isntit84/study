@@ -2,3 +2,7 @@
 .recommenders/
 *.class
 bin/
+*.project
+*.prefs
+*.classpath
+*.rej
