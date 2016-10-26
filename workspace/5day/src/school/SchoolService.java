@@ -15,4 +15,15 @@ public class SchoolService {
 			System.out.println(p[i]);
 		}
 	}
+
+	public MemberVO findPerson(String name) {
+		MemberVO per = null;
+		for (int i = 0; i < index; i++) {
+			if (p[i].getName().equals(name)) {// 이름이 같은지 비교
+				per = p[i];//
+			}
+		}
+		return per;
+	}
+
 }
