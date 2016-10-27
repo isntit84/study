@@ -39,7 +39,7 @@ public class MemberService {
 
 	}
 
-	public void deleteMemberVo(String id) {
+	public void deleteMemberVO(String id) {
 		for (int i = 0; i < list.size(); i++) {
 			MemberVO pro1 = (MemberVO) list.get(i);
 			if (id.equals(pro1.getId())) {

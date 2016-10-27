@@ -23,7 +23,7 @@ public class TestMemberService {
 		else
 			System.out.println("회원이 아닙니다.");
 
-		service.deleteMemberVo("Ajax");
+		service.deleteMemberVO("Ajax");
 		service.printAll();
 
 		boolean result = service.updateMemberVO(new MemberVO("Jquery", "류현진", "666", "인천"));
