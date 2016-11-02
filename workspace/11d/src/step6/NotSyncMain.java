@@ -12,7 +12,8 @@ class Bank {
 		this.money = money;
 	}
 
-	public void saveMoney(int save) {
+
+	public synchronized void saveMoney(int save) {
 		int m = this.getMoney();
 		try {
 			Thread.sleep(3000);
