@@ -12,7 +12,6 @@ class Bank {
 		this.money = money;
 	}
 
-
 	public synchronized void saveMoney(int save) {
 		int m = this.getMoney();
 		try {
@@ -25,13 +24,15 @@ class Bank {
 	}
 
 	public void minusMoney(int minus) {
-		int m = this.money;
-		try {
-			Thread.sleep(200);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		synchronized (this) {
+			int m = this.money;
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			this.setMoney(m - minus);
 		}
-		this.setMoney(m - minus);
 	}
 }
 
