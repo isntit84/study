@@ -28,3 +28,12 @@ public class TestMap1 {
 	}
 
 }
+
+/*2
+{boa=보아, iu=아이유}
+보아
+{boa=보아, iu=현아}
+true
+{boa=보아}
+false
+*/

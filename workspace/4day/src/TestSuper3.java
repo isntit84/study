@@ -1,7 +1,7 @@
 //x
 
 
-class Animal{
+class Animal1{
 	int age =1 ;
 	private String card = "카드";
 	
@@ -18,7 +18,7 @@ class Animal{
 		this.card=card;
 			}
 	}
-class Person extends Animal {
+class Person1 extends Animal1 {
 	public void info(){
 		System.out.println("부모 변수에 접근 테스트 :"+super.age);
 		System.out.println(super.getCard());
