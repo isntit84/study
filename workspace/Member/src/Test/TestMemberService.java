@@ -1,13 +1,13 @@
 package Test;
 
-import Service.MemberService;
+import Service.MemberDAO;
 import VO.MemberVO;
 
 public class TestMemberService {
 
 	public static void main(String[] args) {
 
-		MemberService service = new MemberService();
+		MemberDAO service = new MemberDAO();
 
 		service.addMemberVO(new MemberVO("java", "손연재", "111", "구로"));
 		service.addMemberVO(new MemberVO("oracle", "김연아", "222", "군포"));

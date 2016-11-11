@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import VO.MemberVO;
 
-public class MemberService {
+public class MemberDAO {
 
 	private ArrayList<MemberVO> list = new ArrayList<MemberVO>();
 
