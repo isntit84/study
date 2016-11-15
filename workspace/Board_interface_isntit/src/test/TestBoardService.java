@@ -2,21 +2,24 @@ package test;
 
 import java.util.Scanner;
 
-import service.MemberDAO;
-import vo.MemberVO;
+import service.BoardProcess;
+import service.BoardService;
+import vo.BoardVO;
 
-public class TestMemberService {
+public class TestBoardService {
 
 	public static void main(String[] args) {
+
 		Scanner sc = new Scanner(System.in);
 
 		String id;
-		String name;
-		String tel;
-		String addr;
+		String title;
+		String content;
+		String num;
+
 		boolean flag = true;
 		int i = 0;
-		MemberDAO service = new MemberDAO();
+		BoardProcess service = new BoardProcess(new BoardService());
 
 		while (flag) {
 			System.out.println("1. 등록");
@@ -30,32 +33,32 @@ public class TestMemberService {
 			case 1:
 				System.out.println("아이디를 입력하세요 :");
 				id = sc.next();
-				System.out.println("이름을 입력하세요 :");
-				name = sc.next();
-				System.out.println("전화번호를 입력하세요 :");
-				tel = sc.next();
-				System.out.println("주소을 입력하세요 :");
-				addr = sc.next();
-				service.insert(new MemberVO(id, name, tel, addr));
+				System.out.println("제목 입력하세요 :");
+				title = sc.next();
+				System.out.println("내용 입력하세요 :");
+				content = sc.next();
+				System.out.println("번호 입력하세요 :");
+				num = sc.next();
+				service.insert(new BoardVO(id, title, content, num));
 				break;
 			case 2:
 				System.out.println("아이디를 입력하세요 :");
 				id = sc.next();
-				MemberVO m = service.selectMember(id);
+				BoardVO m = service.select(id);
 
 				System.out.println(m);
 				break;
 
 			case 3:
-				System.out.println("수정할 id를 입력하세요 : ");
+				System.out.println("수정할 아이디를 입력하세요 : ");
 				id = sc.next();
-				System.out.println("수정할 이름을 입력하세요 :");
-				name = sc.next();
-				System.out.println("수정할 전화번호를 입력하세요 :");
-				tel = sc.next();
-				System.out.println("수정할 주소을 입력하세요 :");
-				addr = sc.next();
-				MemberVO m2 = new MemberVO(id, name, tel, addr);
+				System.out.println("수정할 제목을 입력하세요 :");
+				title = sc.next();
+				System.out.println("수정할 내용를 입력하세요 :");
+				content = sc.next();
+				System.out.println("수정할 번호를 입력하세요 :");
+				num = sc.next();
+				BoardVO m2 = new BoardVO(id, title, content, num);
 				service.update(m2);
 				break;
 

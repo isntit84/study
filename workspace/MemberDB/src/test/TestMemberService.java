@@ -2,7 +2,7 @@ package test;
 
 import java.util.Scanner;
 
-import service.MemberDAO;
+import service.MemberService;
 import vo.MemberVO;
 
 public class TestMemberService {
@@ -16,7 +16,7 @@ public class TestMemberService {
 		String addr;
 		boolean flag = true;
 		int i = 0;
-		MemberDAO service = new MemberDAO();
+		MemberService service = new MemberService();
 
 		while (flag) {
 			System.out.println("1. 등록");
@@ -36,12 +36,12 @@ public class TestMemberService {
 				tel = sc.next();
 				System.out.println("주소을 입력하세요 :");
 				addr = sc.next();
-				service.insert(new MemberVO(id, name, tel, addr));
+				service.addMemberVO(new MemberVO(id, name, tel, addr));
 				break;
 			case 2:
 				System.out.println("아이디를 입력하세요 :");
 				id = sc.next();
-				MemberVO m = service.selectMember(id);
+				MemberVO m = service.findMemberVO(id);
 
 				System.out.println(m);
 				break;
@@ -56,17 +56,17 @@ public class TestMemberService {
 				System.out.println("수정할 주소을 입력하세요 :");
 				addr = sc.next();
 				MemberVO m2 = new MemberVO(id, name, tel, addr);
-				service.update(m2);
+				service.updateMemberVO(m2);
 				break;
 
 			case 4:
 				System.out.println("삭제할 id를 입력하세요 : ");
 				id = sc.next();
-				service.delete(id);
+				service.deleteMemberVO(id);
 				break;
 
 			case 5:
-				System.out.println(service.selectAll());
+				service.printAll();
 				break;
 			case 6:
 				flag = false;

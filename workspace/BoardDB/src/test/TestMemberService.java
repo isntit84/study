@@ -2,8 +2,8 @@ package test;
 
 import java.util.Scanner;
 
-import service.MemberDAO;
-import vo.MemberVO;
+import service.BoardService;
+import vo.Board;
 
 public class TestMemberService {
 
@@ -11,12 +11,13 @@ public class TestMemberService {
 		Scanner sc = new Scanner(System.in);
 
 		String id;
-		String name;
-		String tel;
-		String addr;
+		String title;
+		String contents;
+
 		boolean flag = true;
 		int i = 0;
-		MemberDAO service = new MemberDAO();
+		// BoardDAO service = new BoardDAO();
+		BoardService service = new BoardService();
 
 		while (flag) {
 			System.out.println("1. 등록");
@@ -30,18 +31,17 @@ public class TestMemberService {
 			case 1:
 				System.out.println("아이디를 입력하세요 :");
 				id = sc.next();
-				System.out.println("이름을 입력하세요 :");
-				name = sc.next();
-				System.out.println("전화번호를 입력하세요 :");
-				tel = sc.next();
-				System.out.println("주소을 입력하세요 :");
-				addr = sc.next();
-				service.insert(new MemberVO(id, name, tel, addr));
+				System.out.println("제목을 입력하세요 :");
+				sc.nextLine();// 앞에서 입력한 엔터를 지워주기 위해서
+				title = sc.nextLine();
+				System.out.println("내용을 입력하세요 :");
+				contents = sc.nextLine();
+				service.insert(new Board(id, title, contents));
 				break;
 			case 2:
 				System.out.println("아이디를 입력하세요 :");
 				id = sc.next();
-				MemberVO m = service.selectMember(id);
+				Board m = service.find(id);
 
 				System.out.println(m);
 				break;
@@ -49,13 +49,13 @@ public class TestMemberService {
 			case 3:
 				System.out.println("수정할 id를 입력하세요 : ");
 				id = sc.next();
-				System.out.println("수정할 이름을 입력하세요 :");
-				name = sc.next();
-				System.out.println("수정할 전화번호를 입력하세요 :");
-				tel = sc.next();
-				System.out.println("수정할 주소을 입력하세요 :");
-				addr = sc.next();
-				MemberVO m2 = new MemberVO(id, name, tel, addr);
+				System.out.println("수정할 제목을 입력하세요 :");
+				sc.nextLine();// 한글입력받을때
+				title = sc.nextLine();
+				System.out.println("수정할 내용을 입력하세요 :");
+				contents = sc.nextLine();
+
+				Board m2 = new Board(id, title, contents);
 				service.update(m2);
 				break;
 
@@ -66,7 +66,7 @@ public class TestMemberService {
 				break;
 
 			case 5:
-				System.out.println(service.selectAll());
+				service.printAll();
 				break;
 			case 6:
 				flag = false;
