@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+function radioEx(){
+	
+	var me = document.menuForm.menu;
+	
+	var flag=true;
+	for(i=0;i<me.length; i++){
+		if(me[i].checked){
+			alert(me[i].value+"를 주문하셧습니다");
+			flag=false;
+			break;
+		}
+	}
+	if(flag)
+		alert("메뉴를 선택해주세요");
+}
+</script>
+
+
+</head>
+<body>
+	<form name="menuForm">
+	<input type="radio" name="menu" value="꽃등심"> 꽃등심<br>
+	<input type="radio" name="menu" value="우등겹"> 우삼겹<br>
+	<input type="radio" name="menu" value="차돌박이"> 차돌박이<br>
+	<input type="button" value="주문" onclick="radioEx()"> 
+	</form>
+</body>
+</html>

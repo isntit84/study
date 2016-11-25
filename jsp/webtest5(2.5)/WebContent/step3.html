@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkId() {
+		var idTxt = document.loginForm.userId;
+		var passwordTxt = document.loginForm.userPass;
+		if (idTxt.value == "") {
+			alert("빈 공란이 존재합니다.");
+			idTxt.value = "";
+			idTxt.focus();
+			return false;
+		}
+		if (passwordTxt.value == "") {
+			alert("빈 공란이 존재합니다.");
+			passwordTxt.value = "";
+			passwordTxt.focus();
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<!-- javascript : 아이디와 패스워드 중 공란이면 메세지 띄우고 전송하지 않음
+   step3.LoginServlet
+   아이디가 java, 패스워드 abcd이면 로그인
+   그 외 경우 로그은 fail메세지 출력
+    -->
+	<form method="post" action="LoginServlet" name="loginForm"
+		onsubmit="return checkId()">
+		아이디 : <input type="text" name="userId"><br> 패스워드 : <input
+			type="password" name="userPass"><br> <input
+			type="submit" value="로그인">
+	</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script>
+function menuCheck(){
+	var menuTxt=document.menuForm.menu;
+	var flag=true;
+	for(i=0;i<menuTxt.length;i++){
+		if(menuTxt[i].checked){
+			flag=false;
+			break;
+			}
+	}
+	if(flag){
+		alert("빈공란이 존재합니다.");
+		return false;
+	}
+}</script>
+
+
+</head>
+<!-- javascript: menu를 선택하지 않으면 alert() 처리하고 전송하지 않는다.
+CheckBoxServlet:
+java.lang.String[] getParameterValuess(java.lang.String name)을 이용하여 선택한 메뉴항목을 피자 꽃등심 다금바리 주문 -->
+<body>
+<form action="CheckBoxServlet"method="get"name="menuForm"onsubmit="return menuCheck()">
+<input type="checkbox"name="menu"value="피자">피자<br>
+<input type="checkbox"name="menu"value="꽃등심">꽃등심<br>
+<input type="checkbox"name="menu"value="다금바리">다금바리<br>
+<input type="submit"value="전송">
+</form>
+
+
+
+</body>
+</html>
